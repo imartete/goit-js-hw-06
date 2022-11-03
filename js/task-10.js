@@ -10,17 +10,16 @@ const amountInputNode = document.querySelector("input");
 let boxSize = 30;
 
 function createBoxes(amount) {
+  let allCreatedBoxes = "";
   for (let i = 0; i < amount; i += 1) {
-    boxesNode.insertAdjacentHTML(
-      "beforeend",
-      `<div
+    allCreatedBoxes += `<div
       style="width: ${boxSize}px; 
       height: ${boxSize}px; 
       background-color: ${getRandomHexColor()}">
-      </div>`
-    );
+      </div>`;
     boxSize += 10;
   }
+  boxesNode.insertAdjacentHTML("beforeend", allCreatedBoxes);
 }
 
 createButtonNode.addEventListener("click", () => {
